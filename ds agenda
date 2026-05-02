@@ -1,0 +1,32 @@
+from colorama import init, Fore, Style
+
+# Inicializa o colorama para funcionar no terminal
+init()
+
+def monitorar_agua():
+    # 1. Utilizar uma lista para armazenar as situações (Exigência do exercício)
+    situacoes = [
+        "Nivel 1: Muito baixo (critico)",
+        "Nivel 2: Baixo",
+        "Nivel 3: Medio",
+        "Nivel 4: Alto",
+        "Nivel 5: Muito alto (alerta)"
+    ]
+
+    # Lista de cores correspondentes
+    cores = [Fore.RED, Fore.YELLOW, Fore.GREEN, Fore.CYAN, Fore.BLUE]
+
+    print("=== SISTEMA DE MONITORAMENTO DE ÁGUA ===\n")
+
+    # 2. Criar uma função/lógica para exibir conforme o nível
+    # Aqui fazemos uma simulação percorrendo todos os níveis
+    for i in range(len(situacoes)):
+        cor_atual = cores[i]
+        mensagem = situacoes[i]
+        
+        # Exibe com a cor e depois dá o Reset (Exigência do exercício)
+        print(f"{cor_atual}{mensagem}{Style.RESET_ALL}")
+
+# Executa o programa
+if __name__ == "__main__":
+    monitorar_agua()
